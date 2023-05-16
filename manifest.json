@@ -1,20 +1,21 @@
 
 {
   "manifest_version": 3,
-  "name": "Hello Extensions",
+  "name": "TimeStampTube",
   "description": "Base Level Extension",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://*.youtube.com/*"],
   "version": "1.0",
   "action": {
     "default_popup": "hello.html",
-    "default_icon": "chromeIcon.png"
+    "default_icon": "icons/chromeIcon.png"
   },
-  "content_scripts": [
-    {
-      "js": ["scripts/content.js"],
-      "matches": [
-        "https://developer.chrome.com/docs/extensions/*",
-        "https://developer.chrome.com/docs/webstore/*"
-      ]
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
     }
-  ]
+  }
 }
